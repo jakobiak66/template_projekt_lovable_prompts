@@ -1,0 +1,1 @@
+# template_projekt_lovable_prompts
