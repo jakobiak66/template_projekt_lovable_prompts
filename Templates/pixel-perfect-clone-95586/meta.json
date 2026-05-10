@@ -1,0 +1,28 @@
+{
+  "name": "pixel-perfect-clone-95586",
+  "beschreibung": "Multi-page Template fuer eine Strafrecht-Anwaltskanzlei. TanStack Router, Rechtsgebiets-Detailseiten, Notfall-Seite, Blog, Ablauf & Kosten, Bewertungen. React/Vite, TailwindCSS.",
+  "geeignet_fuer": ["Anwaltskanzlei", "Strafrecht", "Rechtsberatung", "Steuerberatung", "Notariat"],
+  "seiten": ["Index", "Rechtsgebiete (Strafrecht, Koerperverletzung, Sexualstrafrecht, BtMG)", "Notfall", "Kanzlei (Ueber mich, Ablauf & Kosten, Bewertungen)", "Blog", "Fall pruefen", "Kontakt", "Impressum", "Datenschutz"],
+  "hauptdatei": "src/router.tsx",
+  "platzhalter": [
+    "Anwaltsname",
+    "Kanzleiname",
+    "Telefonnummer (Notfall)",
+    "E-Mail",
+    "Adresse / Kanzlei-Standort",
+    "Rechtsgebiete-Array",
+    "Awards / Auszeichnungen",
+    "Testimonials / Mandantenstimmen",
+    "FAQ-Eintraege",
+    "Notfall-CTA Text"
+  ],
+  "bild_platzhalter": [
+    "src/assets/hero-lawyer.jpg → Startseite Hero Anwalt",
+    "src/assets/btm-hero.jpg → BtMG-Seite Hero",
+    "src/assets/koerperverletzung-hero.jpg → Koerperverletzung Hero",
+    "src/assets/notfall-hero.jpg → Notfall-Seite Hero",
+    "src/assets/sexualstrafrecht-hero.jpg → Sexualstrafrecht Hero",
+    "src/assets/strafrecht-hero.jpg → Strafrecht Hero",
+    "src/assets/kudamm.jpg → Berlin Kudamm Hintergrund"
+  ]
+}

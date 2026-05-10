@@ -1,0 +1,196 @@
+Bitte passe dieses Projekt vollständig für folgenden Kunden an.
+Ersetze ALLE Platzhalter und Beispielinhalte (Schwalm Heizung & Sanitär).
+
+=====================================
+UNTERNEHMEN:
+=====================================
+- Firma: Elektro-Schirmer UG (haftungsbeschränkt)
+- Kurzname: Elektro-Schirmer
+- Slogan: "Ihr Elektroinstallateur in Berlin"
+- Beschreibung: "Wir sind ein moderner und zuverlässiger Familienbetrieb für
+  Elektroinstallationen, Beleuchtungstechnik, Hausgerätereparaturen und
+  Ersatzteilbeschaffung. Langjährige Erfahrung und qualifiziertes Fachpersonal
+  gewährleisten schnellen und fundierten Kundenservice."
+- Branche: Elektrotechnik / Elektroinstallation / Handwerk
+
+=====================================
+KONTAKT:
+=====================================
+- Telefon (Hauptnummer): 030 - 852 12 69
+- Telefon (Notdienst): 030 - 833 93 51
+- Mobil (Elektroinstallation): 0177 - 520 93 35 / 0173 - 767 77 74
+- Mobil (Gerätereparaturen): 0171 - 644 58 23
+- E-Mail: elektroschirmerberlin@gmail.com
+- E-Mail (Ersatzteile): italiateam@hotmail.de
+- Adresse: Bundesallee 79, 12161 Berlin
+- Öffnungszeiten: Mo.–Fr. 08:00–20:00 Uhr · Sa. + So. nur Notdienst
+
+=====================================
+LEISTUNGEN (nummeriert):
+=====================================
+1. Elektroinstallationen
+   Neuinstallationen oder Sanierungsarbeiten – von der Steckdose bis zur
+   kompletten Hausinstallation. Kleine und große Projekte für Privat- und
+   Gewerbekunden.
+
+2. Beleuchtungstechnik & Lichttechnik
+   Moderne und energieeffiziente Beleuchtungslösungen. Planung und
+   Installation von Innen- und Außenbeleuchtung.
+
+3. Hausgerätereparaturen
+   Waschmaschinen, Geschirrspüler, Herde und Kühlgeräte – schnelle und
+   kostengünstige Reparatur vor Ort.
+
+4. Ersatzteilservice
+   Ersatzteile für alle europäischen Hausgeräte. Im Verbund mit Europas
+   größtem Ersatzteilgroßhändler. Hotline 9–19 Uhr.
+
+5. Neu- und Umbau
+   Beleuchtung, Sprech-/Telefonanlagen, Rollosteuerung, Standard- und
+   High-Tech-Installationen.
+
+6. Sicherheitsanlagen
+   Einbruchmeldeanlagen, Brandmeldeanlagen, Behindertenruf, Kindernotruf.
+
+7. E-Auto Ladestationen
+   Installation von Wallboxen und Ladestationen für Privat und Gewerbe.
+
+8. Türsprechanlagen & Klingelanlagen
+   Installation und Wartung von Türsprech-, Klingel- und
+   Wechselsprechanlagen.
+
+9. Torantriebe & RWA/M-Anlagen
+   Automatische Torantriebe und Rauch-Wärme-Abzugsanlagen.
+
+=====================================
+NAVIGATION (Menüstruktur):
+=====================================
+- Startseite
+- Leistungen (Dropdown):
+  - Alle Leistungen
+  - Elektroinstallation
+  - Sicherheitsanlagen
+  - Hausgeräte & Reparatur
+  - E-Auto Laden
+- Kontakt
+CTA-Button: "Jetzt anfragen"
+
+=====================================
+FARBEN:
+=====================================
+- Primärfarbe (brand): #fb4105  (kräftiges Orange-Rot – typische Elektro-Signalfarbe)
+- Sekundärfarbe (brand-dark): #3d1200  (dunkles Braun-Orange für Footer/Header)
+- Akzentfarbe: #ff6633  (helles Orange)
+- Hintergrund: #ffffff  (weiß)
+- Text: #474747  (dunkelgrau)
+- Text hell: #757575  (mittelgrau)
+- Buttons: #fb4105  (gleich Primär)
+- Button Hover: #e03800  (dunkleres Orange-Rot)
+
+CSS-Variablen für index.css (HSL-Format):
+  --brand: 15 97% 50%;
+  --brand-foreground: 0 0% 100%;
+  --brand-dark: 20 80% 22%;
+  --brand-soft: 15 80% 94%;
+  --section-muted: 15 15% 97%;
+  --footer: 20 40% 15%;
+  --footer-foreground: 0 0% 95%;
+  --primary: 15 97% 50%;
+  --primary-foreground: 0 0% 100%;
+
+Bitte passe die gesamte Farbpalette des Projekts auf diese Farben an.
+Alle CSS-Variablen in src/index.css entsprechend ersetzen.
+
+=====================================
+BILDER:
+=====================================
+- Logo: /public/images/original/logo.jpg  (oder src/assets/elektro-schirmer-logo.jpg)
+- Hero-Bild: /public/images/original/hero.jpg
+  ⚠️ Das Hero-Bild ist qualitativ schlecht (Thumbnail). Bitte ein hochwertiges
+  Platzhalterbild für einen Elektriker/Berliner Stadtbild verwenden, bis der
+  Kunde ein besseres Foto liefert.
+- Betrieb-Bild: src/assets/elektro-betrieb.jpg (verfügbar)
+- Weitere Bilder in /public/images/original/
+Bitte alle Bildpfade entsprechend aktualisieren.
+
+=====================================
+HERO-SEKTION:
+=====================================
+Überschrift: "Ihr Elektroinstallateur in Berlin."
+Untertext: "Fachkundige Beratung und Lösungen vom Profi –
+Elektroinstallationen, Sicherheitsanlagen & mehr."
+Button 1: "Unsere Leistungen" → #leistungen
+Button 2: "Jetzt Termin anfragen" → #kontakt
+Hintergrund: Dunkles Overlay (#brand-dark mit 70% Opacity) über Hero-Bild
+
+=====================================
+WERTE-SEKTION:
+=====================================
+Titel: "Unsere Werte. Ihr Vorteil."
+1. Qualität – "Langjährige Erfahrung und qualifiziertes Fachpersonal
+   gewährleisten hochwertige Ausführung – von der kleinsten Reparatur bis
+   zum Großprojekt."
+2. Zuverlässigkeit – "Wir sind für unsere Kunden da: Mo.–Fr. 08–20 Uhr,
+   Sa./So. Notdienst. Schnelle Reaktionszeiten und Termintreue sind unser
+   Versprechen."
+3. Familienbetrieb – "Als Familienbetrieb beraten wir Sie umfangreich und
+   unkompliziert – ohne Fachbegriffe, dafür mit echtem Engagement."
+
+=====================================
+KONTAKT-SEKTION (ContactInfo):
+=====================================
+- Telefon: 030 - 852 12 69  (href: tel:+4930852l269)
+- E-Mail: elektroschirmerberlin@gmail.com
+- Anschrift: Bundesallee 79, 12161 Berlin
+- Bürozeiten: Mo.–Fr. 08–20 Uhr · Sa./So. Notdienst
+
+=====================================
+FOOTER:
+=====================================
+- Logo (elektro-schirmer-logo.jpg) mit weißem Hintergrund
+- Adresse: Bundesallee 79 · 12161 Berlin
+- Telefon: 030 - 852 12 69
+- E-Mail: elektroschirmerberlin@gmail.com
+- Links: Impressum | Datenschutz
+- Copyright: "© 2025 Elektro-Schirmer UG (haftungsbeschränkt)"
+- Footer-Hintergrund: #brand-dark (dunkles Braun-Orange)
+
+=====================================
+IMPRESSUM:
+=====================================
+Elektro-Schirmer UG (haftungsbeschränkt)
+Bundesallee 79
+12161 Berlin
+
+Kontakt:
+E-Mail: elektroschirmerberlin@gmail.com
+Telefon (Elektroinstallation): +49 177 520 93 35 / +49 173 767 77 74
+Telefon (Gerätereparaturen): +49 30 852 12 69 / +49 171 644 58 23
+
+Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+Elektro-Schirmer UG (haftungsbeschränkt)
+
+=====================================
+DATENSCHUTZ:
+=====================================
+⚠️ Keine Datenschutzerklärung auf der Originalwebsite gefunden.
+Eine DSGVO-konforme Datenschutzerklärung muss vom Kunden bereitgestellt
+oder mit einem Generator erstellt werden (z.B. datenschutz-generator.de).
+
+=====================================
+FEHLENDE INHALTE (vom Kunden anfordern):
+=====================================
+1. ⚠️ Hochwertiges Hero-Bild (1920×1080px) – z.B. Elektriker bei der Arbeit
+2. ⚠️ Team-Fotos (Mitarbeiter-Portraits, 400×400px)
+3. ⚠️ Leistungsbilder für jede Kategorie (800×600px)
+4. ⚠️ Datenschutzerklärung (DSGVO-konform)
+5. ⚠️ Google Maps Einbettung ggf. aktualisieren
+6. Ggf. Kundenbewertungen / Google-Rating
+
+=====================================
+WICHTIG:
+=====================================
+Behalte die bestehende Struktur und Komponenten bei.
+Ändere nur Inhalte, Farben und Bilder.
+Alle Erwähnungen von "Schwalm", "Heizung & Sanitär", "Wärme und Wasser"
+durch Elektro-Schirmer-spezifische Inhalte ersetzen.

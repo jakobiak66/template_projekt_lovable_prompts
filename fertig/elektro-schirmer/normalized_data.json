@@ -1,0 +1,85 @@
+{
+  "firma": "Elektro-Schirmer UG (haftungsbeschränkt)",
+  "firma_kurz": "Elektro-Schirmer",
+  "slogan": "Ihr Elektroinstallateur in Berlin",
+  "beschreibung": "Wir sind ein moderner und zuverlässiger Familienbetrieb für Elektroinstallationen, Beleuchtungstechnik, Hausgerätereparaturen und Ersatzteilbeschaffung. Dabei legen wir nicht nur Wert auf gute Technik und reibungslose Realisierung Ihres Projekts, sondern beraten Sie zudem umfangreich und unkompliziert. Wir bringen es auf den Punkt und verwirren Sie nicht mit Fachbegriffen!",
+  "branche": "Elektrotechnik / Elektroinstallation / Handwerk",
+  "leistungen": [
+    {
+      "titel": "Elektroinstallationen",
+      "beschreibung": "Neuinstallationen oder Sanierungsarbeiten – fachkundig und zuverlässig. Kleine Arbeiten wie Steckdosen- oder Klingelreparaturen ebenso wie große Gewerbeprojekte."
+    },
+    {
+      "titel": "Beleuchtungstechnik & Lichttechnik",
+      "beschreibung": "Moderne und energieeffiziente Beleuchtungslösungen für Privat- und Gewerbekunden. Planung und Installation von Innen- und Außenbeleuchtung."
+    },
+    {
+      "titel": "Hausgerätereparaturen",
+      "beschreibung": "Defekte elektrische Hausgeräte wie Waschmaschinen, Geschirrspüler, Herde und Kühlgeräte reparieren wir schnell & kostengünstig vor Ort."
+    },
+    {
+      "titel": "Ersatzteilservice",
+      "beschreibung": "Ersatzteile für alle europäischen Hausgeräte. Im Verbund mit Europas größtem Ersatzteilgroßhändler – schnell und zuverlässig. Hotline: 9–19 Uhr."
+    },
+    {
+      "titel": "Neu- und Umbau",
+      "beschreibung": "Ob Beleuchtung, Sprech- oder Telefonanlagen, Standard- oder High-Tech-Installationen, Rollosteuerung und vieles mehr – wir beraten individuell und setzen qualifiziert um."
+    },
+    {
+      "titel": "Sicherheitsanlagen",
+      "beschreibung": "Einbruchmeldeanlagen, Brandmeldeanlagen, Behindertenruf und Kindernotruf. Direkte Abschreckung von Einbrechern durch zuverlässige Sensoren."
+    },
+    {
+      "titel": "E-Auto Ladestationen",
+      "beschreibung": "Installation von Wallboxen und Ladestationen für Elektrofahrzeuge – für zuhause und Gewerbe."
+    },
+    {
+      "titel": "Türsprechanlagen & Klingelanlagen",
+      "beschreibung": "Installation und Wartung von Türsprechanlagen, Klingelanlagen und Wechselsprechanlagen."
+    },
+    {
+      "titel": "Torantriebe & RWA/M-Anlagen",
+      "beschreibung": "Automatische Torantriebe und Rauch-Wärme-Abzugsanlagen für Ihre Sicherheit."
+    }
+  ],
+  "team": [
+    {
+      "name": "Team Elektro-Schirmer",
+      "beschreibung": "Kompetente Mitarbeiter mit langjähriger Erfahrung und qualifiziertem Fachpersonal",
+      "foto": "images/kunde/team-1.jpg"
+    }
+  ],
+  "kontakt": {
+    "email": "elektroschirmerberlin@gmail.com",
+    "email_ersatzteile": "italiateam@hotmail.de",
+    "telefon_hauptnummer": "030 - 852 12 69",
+    "telefon_notdienst": "030 - 833 93 51",
+    "mobil_elektroinstallation_1": "0177 - 520 93 35",
+    "mobil_elektroinstallation_2": "0173 - 767 77 74",
+    "mobil_geraete": "0171 - 644 58 23",
+    "adresse": "Bundesallee 79",
+    "stadt": "Berlin",
+    "plz": "12161",
+    "koordinaten": "52.4701, 13.3279"
+  },
+  "oeffnungszeiten": "Mo. – Fr.: 08:00 – 20:00 Uhr\nSa. + So.: nur Notdienst (030 - 833 93 51)",
+  "bilder": {
+    "logo": "images/original/logo.jpg",
+    "hero": "images/original/hero.jpg",
+    "team": [],
+    "leistungen": [],
+    "sonstige": ["images/original/betrieb-1.jpg"]
+  },
+  "farben": "siehe farben.json",
+  "kundenstimmen": [],
+  "social_media": {},
+  "impressum_vorhanden": true,
+  "impressum_text": "Elektro-Schirmer UG (haftungsbeschränkt)\nBundesallee 79\n12161 Berlin\nE-Mail: elektroschirmerberlin@gmail.com\nTelefon: +49 30 852 12 69\nVerantwortlich: Elektro-Schirmer UG",
+  "datenschutz_vorhanden": false,
+  "aktuelles": [
+    {
+      "titel": "Ersatzteilservice für alle europäischen Hausgeräte",
+      "text": "Ab sofort Ersatzteilservice für Waschmaschinen, Geschirrspüler, Trockner, Elektroherde, Kühlgeräte etc. Im Verbund mit Europas größtem Ersatzteilgroßhändler. Hotline: 9–19 Uhr, Tel: 030 - 852 12 69"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "primaer": "#fb4105",
+  "sekundaer": "#474747",
+  "akzent": "#ff6633",
+  "hintergrund": "#ffffff",
+  "text": "#474747",
+  "text_hell": "#757575",
+  "button": "#fb4105",
+  "button_hover": "#e03800",
+  "navigation_bg": "#A0A0A0",
+  "alle_gefundenen": [
+    "#fb4105",
+    "#A0A0A0",
+    "#474747",
+    "#757575",
+    "#FFFFFF",
+    "#000000"
+  ],
+  "notizen": "Primärfarbe #fb4105 ist ein kräftiges Orange-Rot (Elektro-typische Signalfarbe), gefunden im Emotion-Header als Titelfarbe. Hintergrund weiß, Text dunkelgrau."
+}

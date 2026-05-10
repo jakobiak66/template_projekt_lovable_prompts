@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\PP_D_\\\\OneDrive - GFN GmbH \\(EDU\\)\\\\Dokumente\\\\GitHub\\\\template_projekt_lovable_prompts\\\\fertig\\\\\" -Directory | Select-Object Name)"
+    ]
+  }
+}

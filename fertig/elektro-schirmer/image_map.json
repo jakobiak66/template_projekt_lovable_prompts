@@ -1,0 +1,15 @@
+{
+  "logo": "images/original/logo.jpg",
+  "hero": "images/original/hero.jpg",
+  "team": [],
+  "leistungen": [],
+  "sonstige": [
+    "images/original/betrieb-1.jpg"
+  ],
+  "notizen": {
+    "logo": "Logo heruntergeladen (28 KB JPG), Qualität gut",
+    "hero": "Hero-Bild sehr klein (3.2 KB) - Website nutzt es als Thumbnail. Neues hochwertiges Bild vom Kunden erforderlich (Elektriker bei der Arbeit, modernes Büro, o.ä.)",
+    "team": "Team-Bilder konnten nicht heruntergeladen werden (404). Vom Kunden anfordern.",
+    "leistungen": "Keine separaten Leistungsbilder gefunden. Vom Kunden anfordern."
+  }
+}

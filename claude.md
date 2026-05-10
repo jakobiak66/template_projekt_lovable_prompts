@@ -1,33 +1,44 @@
-# Website Rebuild Automation – Projektübersicht
+# Website Rebuild Automation v2
 
 ## Ziel
-Alte Kundenwebseiten automatisch auslesen und in moderne 
-Lovable-Templates übertragen. Du übernimmst den kompletten 
-Prozess von der URL bis zur fertigen Website inkl. Bilder.
+Alte Kundenwebseiten automatisch auslesen, Daten extrahieren
+und daraus zwei Dinge generieren:
+1. Einen fertigen Lovable-Prompt zum Befüllen des Templates
+2. Eine GitHub Pages ready Website als Kunden-Preview
 
 ## Umgebungsvariablen
 - FIRECRAWL_API_KEY – bereits in Systemumgebungsvariablen
 - ANTHROPIC_API_KEY – bereits in Systemumgebungsvariablen
 
 ## Projektstruktur
-template_projekt/
+template_projekt_v2/
 ├── CLAUDE.md
 ├── Templates/
-│   ├── handwerker-klon/
-│   ├── remix-of-pixel/
-│   ├── sight-to-code/
-│   └── [weitere Templates]
-└── output/
-    ├── raw_crawl.json
-    ├── normalized_data.json
-    ├── cost_report.json
-    ├── report.md
-    ├── images/
-    │   ├── original/     ← Bilder von alter Website
-    │   └── kunde/        ← Platzhalter für Kundenbilder
-    └── website/
-        └── public/
-            └── images/   ← Bilder die die Website nutzt
+│   └── [template-ordner]/
+│       └── meta.json
+└── fertig/
+    └── [projektname]/
+        ├── raw_crawl.json
+        ├── normalized_data.json
+        ├── farben.json
+        ├── image_map.json
+        ├── cost_report.json
+        ├── report.md
+        ├── lovable_prompt.txt      ← NEU
+        ├── github_pages_setup.md   ← NEU
+        ├── images/
+        │   ├── original/
+        │   └── kunde/
+        │       └── README.md
+        └── website/
+            └── public/
+                └── images/
+
+## Projektname automatisch generieren
+Leite den Projektordner-Namen aus der URL ab:
+- https://www.elektro-schirmer.com/ → elektro-schirmer
+- https://www.maler-mueller.de/ → maler-mueller
+- Kleinbuchstaben, Bindestriche statt Leerzeichen
 
 ## Dein Ablauf bei jeder neuen Kundenwebsite
 
@@ -35,17 +46,18 @@ template_projekt/
 Gehe durch jeden Ordner in /Templates/:
 - Lies die Hauptdatei (index.html, App.tsx, main.tsx o.ä.)
 - Erkenne Seitenstruktur, Branche, Komponenten, Platzhalter
-- Erkenne auch wo Bilder eingebunden werden (img src, 
-  background-image, etc.)
-- Erstelle /Templates/[name]/meta.json mit:
+- Erkenne wo Bilder und Farben definiert sind
+- Erstelle /Templates/[name]/meta.json falls nicht vorhanden:
 {
   "name": "",
   "beschreibung": "",
   "geeignet_fuer": [],
   "seiten": [],
   "hauptdatei": "",
+  "css_variablen_datei": "",
   "platzhalter": [],
-  "bild_platzhalter": []
+  "bild_platzhalter": [],
+  "farb_variablen": []
 }
 
 ### Schritt 1 – Website scrapen mit Firecrawl
@@ -53,35 +65,93 @@ Nutze die Firecrawl API:
 - Endpoint: https://api.firecrawl.dev/v1/crawl
 - Max 20 Unterseiten
 - Formate: markdown + html
-- Speichere Rohdaten → /output/raw_crawl.json
+- Speichere Rohdaten → /fertig/[projektname]/raw_crawl.json
 
-Messe dabei exakt:
+Messe dabei:
 - Anzahl gecrawlter Seiten
-- Geschätzte API Kosten (Firecrawl: $0.001 pro Seite)
+- Kosten (Firecrawl: $0.001 pro Seite)
 - Dauer in Sekunden
 
-### Schritt 2 – Bilder herunterladen
-Extrahiere alle Bild-URLs aus raw_crawl.json und lade sie herunter:
+### Schritt 2 – Farben extrahieren
+Analysiere das gecrawlte HTML/CSS:
 
-- Lade ALLE gefundenen Bilder herunter → /output/images/original/
-- Benenne sie sinnvoll: hero.jpg, logo.png, team-1.jpg, etc.
-- Filtere aus: Icons, Tracking-Pixel, Bilder unter 10kb
-- Erstelle /output/images/image_map.json:
+Suche nach:
+- CSS Variablen (--primary-color, --accent, etc.)
+- Häufig verwendete HEX/RGB Werte
+- Hintergrundfarben, Textfarben, Button-Farben
+- Inline styles
+- Tailwind Klassen (bg-blue-600 etc.)
+
+Erstelle /fertig/[projektname]/farben.json:
 {
-  "logo": "original/logo.png",
-  "hero": "original/hero.jpg",
-  "team": ["original/team-1.jpg", "original/team-2.jpg"],
-  "leistungen": ["original/service-1.jpg"],
+  "primaer": "#hexwert",
+  "sekundaer": "#hexwert",
+  "akzent": "#hexwert",
+  "hintergrund": "#hexwert",
+  "text": "#hexwert",
+  "text_hell": "#hexwert",
+  "button": "#hexwert",
+  "button_hover": "#hexwert",
+  "alle_gefundenen": []
+}
+
+### Schritt 3 – Logo extrahieren
+Suche das Logo auf mehreren Wegen:
+
+Weg 1 – HTML Tags:
+- <img> mit "logo" im src, alt oder class
+- <svg> mit "logo" in id oder class
+- <a href="/"> mit Bild darin
+
+Weg 2 – CSS:
+- background-image in Header/Nav Elementen
+- Suche nach logo.png, logo.svg, logo.jpg in allen URLs
+
+Weg 3 – Direkte URL-Versuche:
+- [domain]/logo.png
+- [domain]/logo.svg
+- [domain]/logo.jpg
+- [domain]/images/logo.png
+- [domain]/img/logo.png
+- [domain]/assets/logo.png
+- [domain]/wp-content/uploads/
+- [domain]/favicon.ico als Fallback
+
+Lade Logo herunter → /fertig/[projektname]/images/original/logo.png
+Falls kein Logo gefunden: in report.md dokumentieren
+
+### Schritt 4 – Bilder herunterladen
+Extrahiere ALLE Bild-URLs aus raw_crawl.json:
+
+Suche in:
+- Alle <img src="..."> Tags
+- CSS background-image: url(...)
+- srcset Attribute
+- data-src (lazy loading)
+- og:image Meta Tags
+- Twitter Card Bilder
+
+Lade herunter → /fertig/[projektname]/images/original/
+- Benenne sinnvoll: hero.jpg, team-1.jpg, service-1.jpg
+- Filtere: alles unter 10kb, Tracking-Pixel, externe Icons
+- Logo separat behandeln (Schritt 3)
+
+Erstelle /fertig/[projektname]/image_map.json:
+{
+  "logo": "images/original/logo.png",
+  "hero": "images/original/hero.jpg",
+  "team": [],
+  "leistungen": [],
   "sonstige": []
 }
-- Kopiere alle Bilder auch nach /output/website/public/images/
-- Erstelle leere Platzhalter-Ordner /output/images/kunde/ 
-  mit einer README.md:
-  "Hier Kundenbilder ablegen. Diese ersetzen die originalen 
-   Bilder. Gleiche Dateinamen verwenden wie in image_map.json"
 
-### Schritt 3 – Daten normalisieren
-Extrahiere aus den Rohdaten folgendes Schema:
+Erstelle /fertig/[projektname]/images/kunde/README.md:
+"Kundenbilder hier ablegen. Gleiche Dateinamen
+wie in image_map.json verwenden. Diese ersetzen
+die automatisch heruntergeladenen Bilder."
+
+### Schritt 5 – Daten normalisieren
+Extrahiere aus den Rohdaten:
 {
   "firma": "",
   "slogan": "",
@@ -103,39 +173,127 @@ Extrahiere aus den Rohdaten folgendes Schema:
     "team": [],
     "leistungen": []
   },
+  "farben": "[Verweis auf farben.json]",
   "kundenstimmen": [],
   "social_media": {},
   "impressum_vorhanden": false,
   "datenschutz_vorhanden": false
 }
-Speichere → /output/normalized_data.json
+Speichere → /fertig/[projektname]/normalized_data.json
 
-Fehlende Seiten (Impressum, Datenschutz) aus vorhandenen 
+Fehlende Seiten (Impressum, Datenschutz) aus vorhandenen
 Kontaktdaten automatisch generieren.
 
-### Schritt 4 – Template auswählen
+### Schritt 6 – Template auswählen
 - Vergleiche Branche und Struktur mit allen meta.json
 - Wähle das beste Template
 - Begründe die Wahl
 
-### Schritt 5 – Template befüllen
-- Kopiere gewähltes Template → /output/website/
+### Schritt 7 – Template befüllen
+- Kopiere gewähltes Template → /fertig/[projektname]/website/
 - Ersetze alle Text-Platzhalter mit echten Kundendaten
-- Ersetze alle Bild-Platzhalter mit Pfaden aus image_map.json
-- Generiere fehlende Seiten automatisch (Impressum, Datenschutz)
-- Alle Bilder liegen bereits in /output/website/public/images/
+- Ersetze alle Bild-Referenzen mit Pfaden aus image_map.json
+- Passe CSS-Variablen und tailwind.config.ts mit farben.json an
+- Logo in Header, Footer und Favicon einbauen
+- Generiere fehlende Seiten (Impressum, Datenschutz)
 
-### Schritt 6 – Lovable Export vorbereiten
-Erstelle /output/lovable_import.md mit Anleitung:
-- Welche Dateien geändert wurden
-- Wie das Projekt in Lovable importiert wird
-- Welche Bilder der Kunde noch liefern sollte
-- Was noch manuell angepasst werden muss
+### Schritt 8 – GitHub Pages vorbereiten
+Erstelle /fertig/[projektname]/website/vite.config.ts
+mit korrektem base path für GitHub Pages:
 
-### Schritt 7 – Cost & Quality Report
-Erstelle /output/cost_report.json:
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/[projektname]/',
+})
+
+Erstelle /fertig/[projektname]/website/.github/workflows/deploy.yml:
+
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+Speichere Anleitung → /fertig/[projektname]/github_pages_setup.md:
+1. Website Ordner als eigenes GitHub Repo pushen
+2. Repo Settings → Pages → Source: gh-pages Branch
+3. Link wird: https://[username].github.io/[projektname]/
+
+### Schritt 9 – Lovable Prompt generieren
+Erstelle /fertig/[projektname]/lovable_prompt.txt
+
+Der Prompt soll alle Kundendaten enthalten und direkt
+in Lovable eingefügt werden können:
+
+---
+Bitte passe dieses Projekt vollständig für folgenden 
+Kunden an. Ersetze ALLE Platzhalter und Beispielinhalte.
+
+UNTERNEHMEN:
+- Firma: [firma]
+- Slogan: [slogan]
+- Beschreibung: [beschreibung]
+- Branche: [branche]
+
+KONTAKT:
+- Telefon: [telefon]
+- Email: [email]
+- Adresse: [adresse], [plz] [stadt]
+- Öffnungszeiten: [oeffnungszeiten]
+
+LEISTUNGEN:
+[leistungen als nummerierte Liste]
+
+TEAM:
+[team mitglieder]
+
+FARBEN:
+- Primärfarbe: [primaer]
+- Sekundärfarbe: [sekundaer]
+- Akzentfarbe: [akzent]
+- Hintergrund: [hintergrund]
+- Buttons: [button]
+Bitte passe die gesamte Farbpalette des Projekts
+auf diese Farben an.
+
+BILDER:
+- Logo liegt in: /public/images/original/logo.png
+- Hero Bild: /public/images/original/hero.jpg
+- Weitere Bilder in /public/images/original/
+Bitte alle Bildpfade entsprechend aktualisieren.
+
+FEHLENDE INHALTE:
+[liste was noch fehlt / vom Kunden kommen muss]
+
+IMPRESSUM & DATENSCHUTZ:
+[impressum text]
+[datenschutz text]
+
+Wichtig: Behalte die bestehende Struktur und 
+Komponenten bei, ändere nur die Inhalte und Farben.
+---
+
+### Schritt 10 – Cost & Quality Report
+Erstelle /fertig/[projektname]/cost_report.json:
 {
   "datum": "",
+  "projektname": "",
   "url": "",
   "firecrawl": {
     "seiten_gecrawlt": 0,
@@ -146,7 +304,12 @@ Erstelle /output/cost_report.json:
     "gefunden": 0,
     "heruntergeladen": 0,
     "gefiltert": 0,
+    "logo_gefunden": true,
     "gesamt_groesse_mb": 0.00
+  },
+  "farben": {
+    "gefunden": 0,
+    "uebertragen": true
   },
   "anthropic": {
     "input_tokens": 0,
@@ -159,23 +322,27 @@ Erstelle /output/cost_report.json:
     "felder_gefunden": [],
     "felder_fehlend": [],
     "seiten_generiert": [],
-    "bilder_fehlend": []
+    "bilder_fehlend": [],
+    "farben_uebertragen": []
   }
 }
 
-Erstelle außerdem /output/report.md mit:
-- Zusammenfassung was gemacht wurde
+Erstelle /fertig/[projektname]/report.md mit:
+- Zusammenfassung
 - Gewähltes Template + Begründung
-- Bilder-Übersicht (was gefunden, was fehlt noch)
-- Kosten-Übersicht
+- Farben Übersicht
+- Logo Status
+- Bilder Übersicht
+- Kosten
 - Was der Kunde noch liefern muss
-- Nächste Schritte für Lovable Import
+- Nächste Schritte (GitHub Pages Link + Lovable)
 
 ## Wichtige Hinweise
-- Immer zuerst Schritt 0 ausführen falls keine meta.json existiert
-- Bilder immer vor der Datennormalisierung herunterladen
-- Bei Fehlern: weitermachen und im Report dokumentieren
-- Kosten immer tracken, auch bei Teilläufen
-- Output-Ordner vor jedem Lauf leeren
-- Am Ende ist output/website/ eine fertige Website 
-  die direkt in Lovable importiert werden kann
+- Projektordner immer aus Domain ableiten
+- Farben VOR Template befüllen extrahieren
+- Logo mit allen 3 Wegen suchen
+- Bilder: data-src und srcset nicht vergessen
+- GitHub Pages Config immer erstellen
+- Lovable Prompt immer als letzten Schritt generieren
+- Bei Fehlern: weitermachen und dokumentieren
+- Kosten immer tracken

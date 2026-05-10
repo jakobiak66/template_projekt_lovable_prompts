@@ -1,0 +1,32 @@
+{
+  "name": "remix-of-pixel-perfect-clone",
+  "beschreibung": "Multi-page Handwerk-Template fuer Heizung, Sanitaer, Gas und Service. Eigene Leistungsseiten mit Detail-Content, Bewertungen, Hero-Bereich und Kontaktseite. React/Vite, TailwindCSS.",
+  "geeignet_fuer": ["Heizung", "Sanitaer", "Gas", "Handwerk", "Haustechnik"],
+  "seiten": ["Index (Startseite)", "Leistungen (Uebersicht)", "Heizung", "Sanitaer", "Gas", "Service & Wartung", "Kontakt", "404"],
+  "hauptdatei": "src/App.tsx",
+  "platzhalter": [
+    "Firmenname",
+    "Slogan / Hero-Text",
+    "Telefonnummer",
+    "E-Mail",
+    "Adresse / Stadt",
+    "Leistungen-Array (Titel, Text, Icon)",
+    "Kundenbewertungen (Reviews)",
+    "Partner-Logos",
+    "Oeffnungszeiten",
+    "Google-Bewertung / Sterne",
+    "Impressum / Datenschutz"
+  ],
+  "bild_platzhalter": [
+    "src/assets/gas-hero.jpg → Gas-Seite Hero",
+    "src/assets/heizung-hero.jpg → Heizungs-Seite Hero",
+    "src/assets/sanitaer-hero.jpg → Sanitaer-Seite Hero",
+    "src/assets/service-hero.jpg → Service-Seite Hero",
+    "src/assets/hero-wohlbefinden.jpg → Startseite Hero",
+    "src/assets/kontakt-hero.jpg → Kontaktseite Hero",
+    "src/assets/leistungen-hero.jpg → Leistungsseite Hero",
+    "src/assets/smart-heizung.jpg → Smart Home Heizung",
+    "src/assets/schwalm-logo.png → Firmenlogo",
+    "src/assets/review-*.jpg → Kundenfoto-Avatare (3 Stueck)"
+  ]
+}

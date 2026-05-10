@@ -1,0 +1,72 @@
+{
+  "datum": "2026-05-10",
+  "projektname": "elektro-schirmer",
+  "url": "https://www.elektro-schirmer.com/",
+  "firecrawl": {
+    "crawl_id": "019e116d-e9be-7169-8697-2f7f6497d2b6",
+    "seiten_gecrawlt": 11,
+    "kosten_usd": 0.011,
+    "dauer_sekunden": 22
+  },
+  "bilder": {
+    "gefunden": 14,
+    "heruntergeladen": 3,
+    "gefiltert": 11,
+    "logo_gefunden": true,
+    "logo_qualitaet": "gut (28 KB JPG)",
+    "hero_qualitaet": "schlecht (3.2 KB Thumbnail) – Ersatz nötig",
+    "gesamt_groesse_mb": 0.12
+  },
+  "farben": {
+    "gefunden": 6,
+    "primaerfarbe": "#fb4105",
+    "uebertragen": true,
+    "css_variablen_gesetzt": true
+  },
+  "anthropic": {
+    "model": "claude-sonnet-4-6",
+    "input_tokens": 45000,
+    "output_tokens": 8000,
+    "kosten_usd": 0.31
+  },
+  "gesamt_kosten_usd": 0.321,
+  "qualitaet": {
+    "score": 78,
+    "felder_gefunden": [
+      "firma", "slogan", "beschreibung", "branche",
+      "leistungen (9 Stück)", "kontakt.email", "kontakt.telefon",
+      "kontakt.adresse", "kontakt.stadt", "kontakt.plz",
+      "oeffnungszeiten", "logo", "farben",
+      "impressum_text", "aktuelles"
+    ],
+    "felder_fehlend": [
+      "kundenstimmen/reviews",
+      "team-fotos",
+      "leistungsbilder (hochwertig)",
+      "datenschutzerklaerung",
+      "hero-bild (hochwertig)"
+    ],
+    "seiten_generiert": [
+      "Startseite (Index)",
+      "Leistungen (Übersicht)",
+      "Elektroinstallation (Detail)",
+      "Sicherheitsanlagen (Detail)",
+      "Hausgeräte (Detail)",
+      "E-Auto Laden (Detail)",
+      "Kontakt"
+    ],
+    "bilder_fehlend": [
+      "hero.jpg (nur Thumbnail verfügbar)",
+      "team-1.jpg (404 auf Server)",
+      "leistungsbilder (keine vorhanden)"
+    ],
+    "farben_uebertragen": [
+      "#fb4105 → --brand: 15 97% 50%",
+      "#474747 → --foreground",
+      "#FFFFFF → --background",
+      "#3d1200 → --brand-dark: 20 80% 22%"
+    ],
+    "template_gewaehlt": "remix-of-pixel-perfect-clone",
+    "template_begruendung": "Handwerker-Template mit mehrseitiger Struktur, Leistungsseiten und Kontakt – perfekt für Elektrobetrieb adaptierbar"
+  }
+}

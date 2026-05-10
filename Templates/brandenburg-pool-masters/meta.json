@@ -1,0 +1,24 @@
+{
+  "name": "brandenburg-pool-masters",
+  "beschreibung": "Multi-page Template fuer ein Pool- und Schwimmbad-Unternehmen. TanStack Router, Projekt-Galerie, Leistungsseiten, Kontaktformular, Ueber-uns-Seite. React/Vite, TailwindCSS.",
+  "geeignet_fuer": ["Pool", "Schwimmbad", "Poolbau", "Teichbau", "Garten und Landschaft", "Aussenanlagen"],
+  "seiten": ["Index (Startseite)", "Leistungen", "Projekte (Galerie)", "Ueber uns", "Kontakt"],
+  "hauptdatei": "src/router.tsx",
+  "platzhalter": [
+    "Firmenname",
+    "Slogan / Hero-Ueberschrift",
+    "Telefonnummer",
+    "E-Mail",
+    "Adresse / Region (Brandenburg)",
+    "Leistungen-Array",
+    "Impressum / Datenschutz"
+  ],
+  "bild_platzhalter": [
+    "src/assets/hero-pool.jpg → Startseite Pool-Hero",
+    "src/assets/about-technician.png → Techniker Ueber-uns",
+    "src/assets/team-work.jpg → Teamfoto bei der Arbeit",
+    "src/assets/project-1.jpg → Galerie Projekt 1",
+    "src/assets/project-2.jpg → Galerie Projekt 2",
+    "src/assets/project-3.jpg → Galerie Projekt 3"
+  ]
+}

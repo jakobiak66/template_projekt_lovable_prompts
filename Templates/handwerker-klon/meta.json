@@ -1,0 +1,35 @@
+{
+  "name": "handwerker-klon",
+  "beschreibung": "Modernes multi-page Handwerk-Template fuer Sanitaer & Heizung mit vollstaendiger Seitenstruktur, Service-Detailseiten, Karriere und Kontaktformular. React/Vite, TailwindCSS.",
+  "geeignet_fuer": ["Sanitaer", "Heizung", "Waermepumpe", "Handwerk allgemein", "Elektro", "Gasbetrieb", "Haustechnik"],
+  "seiten": ["Index (Startseite)", "Ueber uns", "Sanitaer", "Heizung", "Waermepumpe", "Kostenlose Beratung", "Kontakt", "Karriere", "404"],
+  "hauptdatei": "src/App.tsx",
+  "platzhalter": [
+    "Firmenname",
+    "Slogan / Hero-Ueberschrift",
+    "Telefonnummer",
+    "E-Mail",
+    "Adresse / Stadt / PLZ",
+    "Leistungen (Services-Array)",
+    "Team-Mitglieder",
+    "Kundenbewertungen / Stars",
+    "Partner-Logos",
+    "Google-Bewertungszahl",
+    "Impressum-Text",
+    "Datenschutz-Text"
+  ],
+  "bild_platzhalter": [
+    "src/assets/hero-plumber.jpg → Hero-Hauptbild",
+    "src/assets/hero-worker.jpg → zweites Hero-Bild",
+    "src/assets/beratung-hero.jpg → Beratungsseite Hero",
+    "src/assets/heizung-hero.jpg → Heizungsseite Hero",
+    "src/assets/sanitaer-hero.jpg → Sanitaerseite Hero",
+    "src/assets/waermepumpe-hero.jpg → Waermepumpenseite Hero",
+    "src/assets/founders.jpg → Gruender/Team-Foto",
+    "src/assets/team-group.jpg → Teamfoto Gruppe",
+    "src/assets/leadership-team.jpg → Fuehrungsteam",
+    "src/assets/karriere-team.jpg → Karriereseite Team",
+    "src/assets/consultant.jpg → Beraterfoto",
+    "src/assets/digital-tablet.jpg → Digital/Technik-Bild"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "pixel-perfect-clone-52135",
+  "beschreibung": "Multi-page Template fuer eine Gebaeudereinigungsfirma in Berlin. TanStack Router, Blog-Seiten, Stadtbezirks-Unterseiten, Reviews, FAQ, floating Kontakt-Button. React/Vite, TailwindCSS.",
+  "geeignet_fuer": ["Reinigung", "Gebaeudereinigung", "Buroreinigung", "Dienstleistungen B2B", "Hausmeisterservice"],
+  "seiten": ["Index", "Ueber uns", "Leistungen", "Blog (Index + Artikel)", "Stadtbezirks-Seiten", "Kontakt", "Impressum", "Datenschutz"],
+  "hauptdatei": "src/router.tsx",
+  "platzhalter": [
+    "Firmenname",
+    "Slogan",
+    "Telefonnummer",
+    "E-Mail",
+    "Adresse / Stadtteile (Berlin)",
+    "Leistungen-Array",
+    "Reviews / Kundenbewertungen",
+    "Partner-Logos",
+    "Blog-Artikel (Inhalt)",
+    "FAQ-Eintraege"
+  ],
+  "bild_platzhalter": [
+    "src/assets/hero-person.png → Startseite Hero Person",
+    "src/assets/berlin-skyline.png → Berlin-Hintergrundbild",
+    "src/assets/clean-office.jpg → Sauberes Buero",
+    "src/assets/cleaner-female.jpg → Reinigungskraft weiblich",
+    "src/assets/cleaner-male.jpg → Reinigungskraft maennlich",
+    "src/assets/cleaner-vacuum.png → Staubsauger",
+    "src/assets/cleaner-wiping-table.jpg → Tisch wischen",
+    "src/assets/team-berlin.png → Teamfoto Berlin",
+    "src/assets/*-hero.jpg → Stadtteil-Hero-Bilder (6 Stueck)"
+  ]
+}

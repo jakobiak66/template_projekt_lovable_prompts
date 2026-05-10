@@ -1,0 +1,31 @@
+{
+  "name": "hlr-websiteentwurf",
+  "beschreibung": "Hochwertiges multi-page Template fuer Heizung, Sanitaer, Lueftung und Solartechnik. TanStack Router, ausfuehrliche Leistungsdetailseiten, Notfall-CTA, Testimonials. React/Vite, TailwindCSS.",
+  "geeignet_fuer": ["Heizung", "Sanitaer", "Lueftung", "Solar", "Wasseraufbereitung", "Haustechnik", "SHK-Betrieb"],
+  "seiten": ["Index", "Leistungen", "Heizungstechnik", "Bad & Sanitaer", "Wohnraumlueftung", "Solartechnik", "Wasseraufbereitung", "Kontakt", "Impressum", "Datenschutz"],
+  "hauptdatei": "src/components/site/Hero.tsx",
+  "platzhalter": [
+    "Firmenname (H-L-R GmbH)",
+    "Gruendungsjahr (seit 1999)",
+    "Standort (Erkner)",
+    "Telefonnummer",
+    "E-Mail",
+    "Adresse",
+    "Google-Bewertungen (17 Bewertungen, 4.8 Sterne)",
+    "Leistungs-Texte",
+    "Testimonials"
+  ],
+  "bild_platzhalter": [
+    "src/assets/hero-heizung-sanitaer.png → Startseite Hero",
+    "src/assets/hlr-logo.png → Firmenlogo",
+    "src/assets/hlr-van-hero.jpg → Firmenfahrzeug-Bild",
+    "src/assets/team-hlr.png → Teamfoto",
+    "src/assets/familie-leistungen.png → Leistungsuebersicht Bild",
+    "src/assets/heizungstechnik-hero.png → Heizung Hero",
+    "src/assets/badsanierung-hero.png → Bad Hero",
+    "src/assets/wohnraumlueftung-hero.png → Lueftung Hero",
+    "src/assets/solartechnik-*.png → Solar Bilder",
+    "src/assets/wasseraufbereitung-hero.png → Wasser Hero",
+    "public/lovable-uploads/wasseraufbereitung-new.png → Wasseraufbereitung"
+  ]
+}
